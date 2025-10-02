@@ -10,3 +10,8 @@ variable "ProxmoxPass" {
   description = "Proxmox User password"
   sensitive = true
 }
+
+variable "lxcDefaultPass" {
+  description = "Default password for all the created lxc containers"
+  sensitive = true
+}
