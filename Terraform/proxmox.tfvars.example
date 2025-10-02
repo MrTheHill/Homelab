@@ -1,0 +1,10 @@
+variable "ProxmoxAPIKey" {
+  description = "Proxmox API Key"
+  sensitive = true
+  default = ""
+}
+
+variable "ProxmoxEndpoint" {
+    description = "API endpoint for proxmox"
+    default = ""
+}
