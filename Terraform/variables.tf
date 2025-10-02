@@ -15,3 +15,8 @@ variable "lxcDefaultPass" {
   description = "Default password for all the created lxc containers"
   sensitive = true
 }
+
+variable "osTemplate" {
+  description = "Location of the os for containers"
+  default = "local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
+}

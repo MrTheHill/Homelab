@@ -16,9 +16,11 @@ provider "proxmox" {
 resource "proxmox_lxc" "TestLXC" {
   target_node = "pve"
   hostname = "Terraform"
-  ostemplate = "local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
+  vmid = "250"
+  ostemplate = var.osTemplate
   password = var.lxcDefaultPass
   unprivileged = true
+  start = true
 
   rootfs {
     storage = "local-lvm"
