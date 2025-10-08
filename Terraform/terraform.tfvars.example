@@ -1,0 +1,4 @@
+ProxmoxURL = "https://(yourIP)/api2/json"
+ProxmoxUser = ""
+ProxmoxPass = ""
+lxcDefaultPass = ""
