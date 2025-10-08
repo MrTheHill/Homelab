@@ -13,23 +13,27 @@ provider "proxmox" {
   pm_tls_insecure = true
 }
 
-resource "proxmox_lxc" "TestLXC" {
+resource "proxmox_lxc" "DockerLXC" {
   target_node = "pve"
-  hostname = "Terraform"
-  vmid = "250"
+  hostname = "Docker-01"
+  vmid = "201"
   ostemplate = var.osTemplate
   password = var.lxcDefaultPass
   unprivileged = true
   start = true
 
+  features {
+    nesting = true
+  }
+
   rootfs {
     storage = "local-lvm"
-    size = "8G"
+    size = "50G"
   }
 
   network {
     name = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    ip = var.ips[0]
   }
 }

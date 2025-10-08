@@ -20,3 +20,8 @@ variable "osTemplate" {
   description = "Location of the os for containers"
   default = "local:vztmpl/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
 }
+
+variable "ips" {
+  description = "list of avalable ip addresses"
+  type = list(string)
+}
